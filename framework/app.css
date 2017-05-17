@@ -1,0 +1,423 @@
+
+.bodyView {
+	display: none;
+}
+
+.login {
+	background-color: #80ffff;
+	background: url(images/e.jpeg) no-repeat center center fixed; 
+  	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+  	width: 100%;
+	height: 100%;
+	text-align: center;
+	padding-top: 150px;
+}
+
+.loginout {
+	text-align: center;
+	background: 
+	linear-gradient(
+      rgba(255, 255, 255, 0.45), 
+      rgba(255, 255, 255, 0.45)
+    ), transparent;
+	margin: 0 auto;
+	width: 30%;
+	padding: 30px;
+	border-radius: 7px;
+}
+
+.login h1 {
+	color: white;
+	font-family: 'Pacifico', cursive;
+	font-size: 100px;
+	margin-bottom: 50px;
+}
+
+.exists {
+	font-size: 20px;
+	font-family: 'Asap', sans-serif;
+	color: red;
+	display: none;
+	font-weight: bold;
+}
+
+.login input {
+	width: 350px;
+	height: 40px;
+	display: block;
+	margin: 15px auto;
+	font-size: 17px;
+	font-family: 'Asap', sans-serif;
+	color: #15688B;
+	border-radius: 0px;
+}
+
+.login input:focus {
+	outline-color: #3C838E;
+}
+
+.login button {
+	margin-top: 5px;
+	width: 350px;
+	height: 40px;
+	border-radius: 5px;
+	font-size: 22px;
+	font-family: 'Pacifico', cursive;
+	margin-bottom: 15px;
+}
+
+
+.user-name{
+  font-weight: bold;
+  color: 777888;
+  font-size: 16px;
+}
+
+.receiver-holder, .receiver-status, .receiver-time {
+	color: #09A08D;
+	font-weight: bold;
+ 	font-size: 16px;
+}
+
+.x, .receiver-time{
+	float: right;
+}
+.userlist {
+	padding: 13px 20px;
+}
+
+.totallist {
+	background-color: #EFF2F2;
+	height: 73px;
+}
+
+.totallist2 {
+	height: 733px;
+}
+
+.userlist1 {
+	border-right: 1px solid #D4D2D1;
+}
+
+.col-md-3 {
+	border-right: 1px solid #D4D2D1;
+}
+
+.userlist2 {
+	height: 733px;
+	width: 100%;
+	background-color: #FFF8DC;
+	padding: 0 30px;
+}
+
+.userlist3 {
+	height: 533px;
+	width: 100%;
+	background-image: url(Images/bi.jpg);
+}
+
+.authorView {
+	font-size: 20px;
+	font-family: 'Slabo 27px', serif;
+	color: white;
+	height: 39px;
+	margin-top: 10px;
+	background-color: #FF6347;
+	padding: 7px;
+	float: left;
+	width: 20%;
+	margin-right: 10px;
+}
+
+.mesview {
+	border-radius: 8px;
+	margin-top: 10px;
+	background-color: #CAF4BB;
+	padding: 7px;
+	float: left;
+	width: 60%;
+	height: 39px;
+}
+
+.t {
+	cursor: pointer;
+	height: 25px;
+	width: 25px;
+}
+
+.s {
+	cursor: pointer;
+	height: 30px;
+	width: 30px;
+	border-radius: 4px;	
+	margin-top: 4px;
+}
+
+.selectbtn {
+	width: 97px;
+	height: 30px;
+}
+
+.tx {
+	cursor: pointer;
+	height: 17px;
+	width: 17px;
+	opacity: 0.7;
+}
+
+.time {
+	font-style: italic;
+	font-size: 10px;
+}
+
+.author-side, .rec-user {
+	float: left;
+}
+
+.rec-user, .rec-status {
+	width: 40%;
+	padding-left: 10px;
+}
+
+.rec-status {
+	float: left;
+}
+
+.rec-statusx {
+	float: left;
+	width: 20%;
+}
+
+.edit-user, .update-user, .edit-status, .update-status {
+	width: 22px;
+	height: 22px;
+	cursor: pointer;
+	float: right;
+}
+
+.other-users {
+	height: 40px;
+	font-weight: bold;
+	cursor: pointer;
+	padding: 12px 0px;
+	border-bottom: 1px solid #D4D2D1;
+	width:100%;
+}
+
+.other-users:hover {
+	padding: 0px -15px; 
+	background-color: lightgrey;
+}
+
+.imgUser {
+	width: 22px;
+	height: 22px;
+}
+
+input {
+	border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding-left: 5px;
+}
+
+.author-container{
+  font-weight: bold;
+  margin: 10px 15px;
+}
+
+.test-container {
+	overflow-y: scroll;
+	height: 373px;
+	width: 100%;
+}
+
+.sender {
+	padding: 15px 20px;
+	margin: 0 -15px;
+	height: 70px;
+	background-color: #EEECEB;
+}
+
+.form-control {
+	height: 40px !important;
+	max-width: 920px !important;
+	float: left;
+}
+
+.search {
+	height: 40px !important;
+	width: 85%;
+	float: left;
+}
+
+.topsearch {
+	height:50px;
+	padding-left:20px; 
+	margin-top:10px;
+	border-bottom: 1px solid lightgrey;
+}
+
+.mess {
+	border: none;
+	float: left;
+	height: 80px !important;
+}
+
+.searchmes {
+	height: 40px !important;
+	width: 800px !important;
+	float: left;
+}
+
+.selection {
+	height: 80px;
+	background-color: #EFF2F2;
+	width: 130px;
+	float: right;
+	padding: 8px 15px;
+	display: none;
+
+}
+
+.findx, .findmes {
+	border: 1px lightgrey solid;
+	border-radius: 8px;
+	cursor: pointer;
+	float: right;
+	padding: 5px;
+	height: 40px;
+	width: 40px;
+	background-color: white;
+}
+
+.findmes{
+	float: left;
+	margin-left: 10px;
+}
+
+.findx:hover, .findmes:hover {
+	background-color: #FFFFFB; 
+}
+
+.sr {
+	padding-left: 20px;
+	font-weight: bold;
+  	color: grey;
+  	font-size: 16px;
+}
+
+.sender img {
+	float: left;
+	height: 40px;
+	width: 40px;
+}
+
+.receiver-container {
+	overflow-y: scroll;
+	padding-left: 20px;
+	height: 613px;
+}
+
+.count-container {
+	border-top: 1px solid #D4D2D1;
+	height: 60px;
+	width: 100%;
+}
+
+.chatc {
+	font-size: 15px;
+	font-family: 'Baloo', cursive;
+	padding-left: 20px;
+	padding-top: 10px;
+	font-weight: bold;
+}
+
+.holder-container {
+	width: 90%;
+	float: left;
+}
+
+.dropdown {
+	float: right;
+	margin-right: 20px;
+}
+
+.dropdown img {
+	width: 45px;
+	height: 43px;
+}
+
+.dropdown-menu li {
+	padding-left: 20px;
+	padding-bottom: 5px;
+}
+
+.dropdown-menu li img {
+	cursor: pointer;
+	height: 60px;
+	width: 120px;
+}
+
+.red {
+	color: red;
+}
+
+.yellow {
+	color: yellow;
+}
+
+.blue {
+	color: blue;
+}
+
+.emojibtn {
+	height: 40px;
+	width: 40px;
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-top:0 !important;
+	float: left;
+}
+
+#btn i {
+	height: 20px;
+	width: 20px;
+}
+
+#editor {
+    -moz-appearance: textfield;
+    -webkit-appearance: textfield;
+    background-color: white;
+    background-color: -moz-field;
+    border: 1px solid darkgray;
+    box-shadow: 1px 1px 1px 0 lightgray inset;  
+    font: -moz-field;
+    font: -webkit-small-control;
+    padding: 2px 3px;
+    width: 750px !important;  
+    height: 40px;  
+}
+
+.footer {
+	width: 102%;
+	height: 200px;
+	margin-left: -15px;
+	margin-right: 0 !important;
+	background-color: #3C838E;
+	text-align: center;
+}
+
+.footer div {
+	padding: 0 auto;
+	padding-top: 150px;
+}
+
+.footer span {
+	color: white;
+	font-family: 'Pacifico', cursive;
+	font-size: 30px;
+}

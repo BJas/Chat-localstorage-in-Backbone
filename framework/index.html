@@ -1,0 +1,201 @@
+<html>
+  <head>
+    <title>GoChat</title>
+    <link rel="shortcut icon" href="Images/chat.png">
+    <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Baloo" rel="stylesheet">
+    <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Asap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="lib/css/bootstrap.css"/>
+    <link rel="stylesheet" href="lib/css/jquery.mCustomScrollbar.min.css"/>
+    <link rel="stylesheet" href="dist/css/jquery.emoji.css"/>
+    <link rel="stylesheet" href="lib/css/railscasts.css"/>
+    <link rel="stylesheet" href="dist/css/index.css"/>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="vendor/jquery.js"></script>
+    <script src="vendor/json2.js"></script>
+    <script src="vendor/underscore.js"></script>
+    <script src="vendor/backbone.js"></script>
+    <script src="vendor/backbone.radio.js"></script>
+    <script src="vendor/backbone.marionette.min.js"></script>
+    <script src="app.js"></script>
+  </head>
+  <body>
+    <div class="login">
+      <h1>Go Chat</h1>
+    <div class="loginout">
+      <input type="text" placeholder="Username" class="nameinput">
+      <input type="text" placeholder="Status" class="statusinput">
+      <p class="exists"><b>Username is empty!</b></p>
+    <button class="sbmitbtn btn-success">Submit</button>
+    </div>
+    </div>
+    <div class="bodyView">
+    <div class="row totallist">
+      <div class="col-md-3 userlist1 user-name">
+        <div class="author-container"></div>
+      </div>
+      <div class="col-md-9 userlist">
+        <span class="holder-container"></span>
+        <div class="dropdown">
+          <img id="dLabel" data-target="#" href="http://example.com" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="bi" src="Images/back.png" />
+      <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dLabel">
+        <li><img onclick="changeUrl('Images/second.jpg')" src="Images/second.jpg" alt="" type="button"></li>
+        <li><img onclick="changeUrl('Images/first.jpg')" src="Images/first.jpg" alt="" type="button"></li>
+        <li><img onclick="changeUrl('Images/third.jpg')" src="Images/third.jpg" alt="" type="button"></li>
+        <li><img onclick="changeUrl('Images/bi.jpg')" src="Images/bi.jpg" alt="" type="button"></li>
+      </ul>
+      </div>
+     </div>
+    </div>
+
+    <div class="row totallist2">
+      <div class="col-md-3 userlist2">
+        <div class="topsearch">
+          <input type="text" placeholder="Search user" class="search">
+          <img type="button" class="findx" src="http://www.clipartkid.com/images/775/search-icon-clip-art-at-clker-com-vector-clip-art-online-royalty-643l5L-clipart.png" />
+        </div>
+        <div class="receiver-container"></div>
+        <div class="count-container"></div>
+        </div>
+      <div class="col-md-9 userlist3">
+      <div style="width:100%;">
+      <div class="topsearch mess">
+          <input type="text" placeholder="Search message"class="searchmes">
+          <img type="button" class="findmes" src="http://www.clipartkid.com/images/775/search-icon-clip-art-at-clker-com-vector-clip-art-online-royalty-643l5L-clipart.png" />
+        </div>
+      <div class="selection">
+        <button type="button" class="btn btn-danger selectbtn" style="display:none;">Delete</button>
+        <img class="selectred s" src="https://i.kinja-img.com/gawker-media/image/upload/s--XkYSDzxz--/c_scale,fl_progressive,q_80,w_800/hflvykipmc5g22mc3m0m.jpg" type="button" style="display:none;"/>
+        <img class="selectyellow s" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC8s_QVu8MC3THBI_Eq-68vT3_J8a6CmL6y1oC6VFBQf_19C2MNb947Ik" type="button" style="display:none;"/>
+        <img class="selectblue s" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQmlKaRTDGMlLvzaXHmgTWbxHVw-4kBqfznod3krkWPtH1Ykwk0SjxtIQ" type="button" style="display:none;"/>
+      </div>
+    </div>    
+      <div class="test-container"></div>
+      <div class="sender">
+          <div id="editor" type="text" class="form-control" contenteditable="true" align="left"></div>
+        <img type="button" class="submit col-sm-1 btn btn-default" style="width:60px;"  src="Images/send.png" />
+      </div>
+
+    <div class="footer">
+      <div>
+        <span>GoChat &copy 2017</span>
+      </div>
+    </div>
+    </div>
+
+    <div class="templates">
+      <script type="x-template/underscore" id="users">
+        <div>
+          <img src="Images/user.png" alt="" class="imgUser">
+          <span class="author"><%= author %></span>
+          <img type="button" src="http://www.iconarchive.com/download/i65337/custom-icon-design/pretty-office-10/Pencil.ico" class="edit-user" />
+          <img src ="http://www.iconarchive.com/download/i60504/custom-icon-design/pretty-office-9/edit-validated.ico" class="update-user" style="display:none;" />
+          <br/>
+          <img src="Images/star.png" class="imgUser"/>
+          <span class="status"><%= userstatus %></span>
+          <img type="button" src="http://www.iconarchive.com/download/i65337/custom-icon-design/pretty-office-10/Pencil.ico" class="edit-status" />
+          <img src ="http://www.iconarchive.com/download/i60504/custom-icon-design/pretty-office-9/edit-validated.ico" class="update-status" style="display:none;" />
+        </div>
+      </script>
+
+      <script type="x-template/underscore" id="chatcount">
+        <div class="chatc">
+          <span>Chats: <span><span><%= chatnumber %></span></br>
+          <span>Messages: </span><span><%= messagenumber %></span>
+        </div>
+      </script>
+
+      <script type="x-template/underscore" id="holder">
+        <div>
+          <img src="Images/userx.png" alt="" class="imgUser">
+          <span class="receiver-holder"><%= receiverholder %></span>
+          <img src="Images/stopwatch.png" alt="" class="imgUser x">
+          <span class="receiver-time"><%= receivertime %></span>
+          </br>
+          <img src="Images/star.png" class="imgUser"/>
+          <span class="receiver-status"><%= receiverstatus %></span>
+        </div>
+      </script>
+
+      <script type="x-template/underscore" id="receiver">
+        <div class="other-users">
+        <div class="rec-user">
+         <img src="Images/user.png" alt="" class="imgUser">
+         <span class="r"><%= receiver%></span></div>
+        <div class="rec-status"><img src="Images/star.png" class="imgUser"/>
+          <%= recstatus%></div>
+          <div class="rec-statusx">
+          <img src="Images/delete.png" class="delete-chat t" type="button"/>
+
+          <img src="Images/garbage.png" class="refresh-chat t" type="button"/>
+          </div>
+        </div>
+      </script>
+      <script type="x-template/underscore" id="message">
+        <div>
+          <div class="authorView">
+            <span><%= author %></span>
+          </div>
+          <div class="mesview">
+          <img src="Images/cirlce.png" class="tx select" type="button"/>
+          <img src="Images/check.png" style="display:none;" class="tx selected" type="button"/>
+          <span class="sms"><%= message %></span>
+          <div style="float:right;">
+          <span class="time"><%= time %></span>
+          <img src="Images/d.png" class="delete-this t" type="button"/>
+          <img src="Images/pencil.png" class="edit-this t" type="button" />
+          <img class="update-this t" src="Images/download.png" style="display:none;" type="button"/>
+          <img class="red t" src="Images/r.png" type="button"/>
+          <img class="yellow t" src="Images/y.png" type="button"/>
+          <img class="blue t" src="Images/b.png" type="button"/>
+          </div>
+          </div>
+        </div>
+      </script>
+      <script type="x-template/underscore" id="messagex">
+          <div class="authorView">
+            <span><%= authorx %></span>
+          </div>
+          <div class="mesview">
+          <span class="sms"><%= messagex %></span>
+          <div style="float:right;">
+          <span class="time"><%= timex %></span>
+            </div>
+            </div>
+        </script>
+    </div>
+    </div>
+
+<script src="lib/script/jquery.min.js"></script>
+<script src="lib/script/highlight.pack.js"></script>
+<script src="lib/script/jquery.mousewheel-3.0.6.min.js"></script>
+<script src="lib/script/jquery.mCustomScrollbar.min.js"></script>
+<script src="dist/js/jquery.emoji.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+    $(('#editor')).on('keydown', function () {
+        $("#editor").emoji({
+            button: "#btn",
+            showTab: false,
+            animation: 'slide',
+            icons: [{
+                name: "QQ表情",
+                path: "dist/img/qq/",
+                maxNum: 91,
+                excludeNums: [41, 45, 54],
+                file: ".gif"
+            }]
+        });
+    });
+</script>
+
+  </body>
+</html>
